@@ -541,8 +541,8 @@
 
   /* Rotating globe — silhouette */
   .globe{
-    position:absolute;top:50%;right:-18%;transform:translateY(-50%);
-    width:900px;height:900px;z-index:1;pointer-events:none;
+    position:absolute;top:50%;right:-6%;transform:translateY(-50%);
+    width:820px;height:820px;z-index:1;pointer-events:none;
     mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
     -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
     opacity:.9;
@@ -589,16 +589,6 @@
   .hero-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:56px;margin-top:72px;flex-wrap:wrap}
   .lede{font-size:18px;line-height:1.55;color:var(--muted-light);max-width:480px;margin:0}
   .ctas{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-
-  /* ─── Live rate strip (calm, single row) ──────── */
-  .rate-strip{background:#0D0D0D;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-  .rate-strip-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
-  .rs-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:4px}
-  .rs-cell:last-child{border-right:0}
-  .rs-cell .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E6E76}
-  .rs-cell .v{font-family:'Inter';font-weight:600;font-size:18px;letter-spacing:-.01em;color:#fff}
-  .rs-cell .d{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted-dark)}
-  .rs-cell .d.up{color:var(--accent)}
 
   /* ─── Intro / product promise ─────────────────── */
   .promise{background:var(--paper);color:var(--ink);padding:140px 0}
@@ -686,8 +676,6 @@
     .nav.is-open .nav-cta .btn{width:100%;justify-content:center;height:44px}
     h1.kinetic{font-size:clamp(46px,12vw,72px)}
     .hero-bot{flex-direction:column;align-items:flex-start}
-    .rate-strip-inner{grid-template-columns:repeat(2,1fr)}
-    .rs-cell{border-bottom:1px solid rgba(255,255,255,.06)}
     .wl-sec{padding:90px 0}
     .wl-grid{grid-template-columns:1fr;gap:40px}
     .wl-row{grid-template-columns:1fr;gap:18px}
@@ -739,22 +727,8 @@
     </h1>
 
     <div class="hero-bot">
-      <p class="lede">Built for Nigerian manufacturers paying suppliers in Shenzhen, Mumbai and Hamburg. Same-day settlement, real FX rates, and an audit trail your accountant will actually like.</p>
-      <div class="ctas">
-        <a href="#talk" class="btn btn-lime">Join the waitlist →</a>
-      </div>
+      <p class="lede">Built for Nigerian manufacturers paying suppliers abroad. Same-day settlement, real FX rates, and an audit trail your accountant will actually like.</p>
     </div>
-  </div>
-</section>
-
-<!-- LIVE RATE STRIP ──────────────────────────────── -->
-<section class="rate-strip">
-  <div class="rate-strip-inner">
-    <div class="rs-cell"><div class="k">NGN / EUR</div><div class="v">1,466.80</div><div class="d up">+0.3%</div></div>
-    <div class="rs-cell"><div class="k">NGN / USD</div><div class="v">1,601.20</div><div class="d up">+0.2%</div></div>
-    <div class="rs-cell"><div class="k">NGN / CNY</div><div class="v">221.45</div><div class="d">−0.1%</div></div>
-    <div class="rs-cell"><div class="k">NGN / GBP</div><div class="v">2,020.15</div><div class="d up">+0.4%</div></div>
-    <div class="rs-cell"><div class="k">NGN / AED</div><div class="v">436.02</div><div class="d up">+0.3%</div></div>
   </div>
 </section>
 
