@@ -664,15 +664,15 @@
   .wl-disclaimer{font-size:12px;color:var(--muted);margin:2px 0 0;line-height:1.5}
 
   /* ─── Footer ─────────────────────────────────── */
-  footer{background:var(--ink);color:var(--muted-dark);padding:72px 0 36px;border-top:1px solid rgba(255,255,255,.08)}
-  .foot-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;margin-bottom:56px}
-  .foot-grid h5{color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.04em;margin:0 0 16px}
-  .foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-  .foot-grid a{font-size:13.5px;color:var(--muted-dark);transition:color .15s}
-  .foot-grid a:hover{color:#fff}
-  .foot-bio{color:var(--muted-dark);font-size:13.5px;line-height:1.55;margin:18px 0 0;max-width:280px}
-  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);font-size:11.5px;color:#6E6E76;font-family:'JetBrains Mono',monospace;letter-spacing:.06em}
-  .foot-bottom .links{display:flex;gap:22px}
+  footer{background:var(--ink);color:var(--muted-dark);padding:64px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
+  .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px}
+  .foot-brand{max-width:320px;display:flex;flex-direction:column;gap:14px}
+  .foot-bio{color:var(--muted-dark);font-size:13.5px;line-height:1.55;margin:0}
+  .foot-contact{display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right}
+  .foot-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  .foot-contact a{color:#fff;font-size:14.5px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:border-color .15s}
+  .foot-contact a:hover{border-bottom-color:#fff}
+  .foot-bottom{padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 
   @media (max-width:980px){
     .nav-toggle{display:flex}
@@ -699,8 +699,8 @@
     .who-sec{padding:90px 0}
     .who-grid{grid-template-columns:1fr;gap:14px}
     .who-card{padding:28px}
-    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
-    .foot-bottom{flex-direction:column;gap:14px;align-items:flex-start}
+    .foot-inner{flex-direction:column;gap:32px;align-items:flex-start}
+    .foot-contact{align-items:flex-start;text-align:left}
   }
 </style>
 </head>
@@ -731,7 +731,7 @@
   <div class="globe" aria-hidden="true"><canvas id="globeCanvas" width="900" height="900"></canvas></div>
   <div class="wrap hero-inner">
     <div class="hero-top">
-      <span class="pill"><span class="ld"></span>Pilot · 14 corridors</span>
+      <span class="pill"><span class="ld"></span>Pilot phase</span>
     </div>
 
     <h1 class="kinetic">
@@ -740,7 +740,7 @@
     </h1>
 
     <div class="hero-bot">
-      <p class="lede">The modern FX &amp; settlement layer for operators moving real volume. Bank-adjacent rates. Wire confirmation before you fund.</p>
+      <p class="lede">Built for Nigerian manufacturers paying suppliers in Shenzhen, Mumbai and Hamburg. Same-day settlement, real FX rates, and an audit trail your accountant will actually like.</p>
       <div class="ctas">
         <a href="#talk" class="btn btn-lime">Join the waitlist →</a>
       </div>
@@ -881,33 +881,18 @@
 
 <!-- FOOTER ─────────────────────────────────────── -->
 <footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <img src="assets/img/logo.svg" alt="StellarPay" class="logo-mark">
-        <p class="foot-bio">The modern cross-border payments platform. Built by operators who've lived the problem.</p>
-      </div>
-      <div>
-        <h5>Product</h5>
-        <ul><li><a href="#">Payments</a></li><li><a href="#">FX &amp; hedging</a></li><li><a href="#">Accounts</a></li><li><a href="#">API</a></li></ul>
-      </div>
-      <div>
-        <h5>Use cases</h5>
-        <ul><li><a href="#">Suppliers</a></li><li><a href="#">Buying-house</a></li><li><a href="#">Treasury</a></li><li><a href="#">Urgent transfers</a></li></ul>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <ul><li><a href="#">About</a></li><li><a href="#">Customers</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul>
-      </div>
-      <div>
-        <h5>Resources</h5>
-        <ul><li><a href="#">Docs</a></li><li><a href="#">Status</a></li><li><a href="#">Security</a></li><li><a href="#">Contact</a></li></ul>
-      </div>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <img src="assets/img/logo.svg" alt="StellarPay" class="logo-mark">
+      <p class="foot-bio">Cross-border payments built for Nigerian B2B trade.</p>
     </div>
-    <div class="foot-bottom">
-      <div>© 2026 STELLARPAY, INC.</div>
-      <div class="links"><a href="#">TERMS</a><a href="#">PRIVACY</a><a href="#">COMPLIANCE</a></div>
+    <div class="foot-contact">
+      <span class="foot-label">Contact</span>
+      <a href="mailto:durai@stellarinternational.ae">durai@stellarinternational.ae</a>
     </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 · A product by Stellar International</span>
   </div>
 </footer>
 
