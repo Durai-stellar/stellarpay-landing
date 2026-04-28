@@ -607,15 +607,16 @@
   h2 .serif{font-weight:400;font-style:italic;font-size:1.05em;letter-spacing:-.03em}
 
   .promise-intro{max-width:560px;color:var(--text-2);font-size:17px;line-height:1.55;margin:20px 0 0}
-  .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:80px;border-top:1px solid rgba(10,10,10,.1)}
-  .promise-cell{display:flex;flex-direction:column;padding:56px 40px 56px 0;border-right:1px solid rgba(10,10,10,.1)}
-  .promise-cell:nth-child(2n){border-right:0;padding-right:0;padding-left:40px}
+  .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px;border-top:1px solid rgba(10,10,10,.1)}
+  .promise-cell{display:grid;grid-template-rows:subgrid;grid-row:span 5;padding:40px 32px 40px 0;border-right:1px solid rgba(10,10,10,.1)}
+  .promise-cell > *{align-self:start}
+  .promise-cell:nth-child(2n){border-right:0;padding-right:0;padding-left:32px}
   .promise-cell:nth-child(-n+2){border-bottom:1px solid rgba(10,10,10,.1)}
-  .promise-cell .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.14em;margin-bottom:24px}
-  .promise-cell h3{font-size:32px;font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0 0 24px;color:var(--ink);min-height:2.2em}
+  .promise-cell .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.14em;margin:0 0 20px}
+  .promise-cell h3{font-size:30px;font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0 0 20px;color:var(--ink)}
   .promise-cell h3 .serif{font-weight:400;font-style:italic;font-size:1.06em;letter-spacing:-.02em}
-  .promise-cell .sol{color:var(--ink-soft);font-size:16px;line-height:1.55;margin:0 0 32px;max-width:440px;font-weight:500;min-height:calc(1.55em * 3)}
-  .promise-cell .prob-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;margin-top:auto}
+  .promise-cell .sol{color:var(--ink-soft);font-size:15.5px;line-height:1.55;margin:0 0 24px;max-width:440px;font-weight:500}
+  .promise-cell .prob-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
   .promise-cell .prob{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55;max-width:440px;padding-left:14px;border-left:2px solid rgba(10,10,10,.08);font-style:italic}
 
   /* ─── Who this is for ────────────────────────── */
@@ -762,7 +763,7 @@
   <div class="wrap">
     <span class="eyebrow">The platform</span>
     <h2>What we <span class="serif">solve.</span></h2>
-    <p class="promise-intro">Three things cross-border payments should just do.</p>
+    <p class="promise-intro">Four things cross-border payments should just do.</p>
 
     <div class="promise-grid">
       <div class="promise-cell">
