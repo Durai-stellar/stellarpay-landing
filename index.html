@@ -644,7 +644,28 @@
   .map-city{position:absolute;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:4px 9px;border-radius:6px;transform:translate(-50%, calc(-100% - 12px));white-space:nowrap;transition:all .3s;pointer-events:none}
   .map-city.active{background:var(--accent);color:var(--ink);border-color:var(--accent)}
 
-  /* ─── Research / talk to us ──────────────────── */
+  /* ─── Waitlist ───────────────────────────────── */
+  .wl-sec{background:var(--ink);color:#fff;padding:140px 0;position:relative;overflow:hidden}
+  .wl-sec::before{content:"";position:absolute;top:-120px;left:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(232,255,58,.18), transparent 65%);pointer-events:none;filter:blur(60px)}
+  .wl-wrap{max-width:1160px;margin:0 auto;position:relative;z-index:1}
+  .wl-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .wl-copy .eyebrow{color:#8e8e96}
+  .wl-lead{font-family:'Inter';font-weight:700;font-size:clamp(36px,4.4vw,56px);line-height:1.05;letter-spacing:-.035em;margin:18px 0 24px;color:#fff}
+  .wl-lead .serif{font-weight:400;font-style:italic;font-size:1.04em;letter-spacing:-.025em}
+  .wl-sub{color:#B8B8BE;font-size:17px;line-height:1.55;max-width:460px;margin:0}
+  .wl-form{background:var(--paper);color:var(--ink);padding:36px;border-radius:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 24px 48px rgba(0,0,0,.4)}
+  .wl-field{display:flex;flex-direction:column;gap:8px}
+  .wl-field label{font-size:13.5px;font-weight:600;color:var(--ink);letter-spacing:-.005em}
+  .wl-field input{padding:14px 16px;border:1px solid rgba(10,10,10,.16);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);transition:border-color .15s, box-shadow .15s}
+  .wl-field input::placeholder{color:#9a9aa0}
+  .wl-field input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(232,255,58,.35)}
+  .wl-submit{background:var(--accent);color:var(--ink);padding:0 24px;height:52px;border:none;border-radius:14px;font-size:15.5px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:background .18s, transform .12s;margin-top:6px}
+  .wl-submit:hover{background:#fff}
+  .wl-submit:active{transform:translateY(1px)}
+  .wl-submit:disabled{background:#dcdce0;color:#6E6E76;cursor:default}
+  .wl-disclaimer{font-size:12.5px;color:#6E6E76;margin:2px 0 0;line-height:1.4}
+
+  /* ─── Research / talk to us (legacy, unused) ─── */
   .talk-sec{background:var(--paper);color:var(--ink);padding:180px 0;position:relative;overflow:hidden}
   .talk-sec::before{content:"";position:absolute;top:0;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(232,255,58,.22), transparent 65%);pointer-events:none;filter:blur(60px)}
   .talk-wrap{max-width:1160px;margin:0 auto;position:relative;z-index:1}
@@ -742,6 +763,9 @@
     .talk-grid{grid-template-columns:1fr;gap:40px}
     .talk-head{margin-bottom:48px}
     .talk-foot{flex-direction:column;align-items:flex-start;gap:24px}
+    .wl-sec{padding:90px 0}
+    .wl-grid{grid-template-columns:1fr;gap:40px}
+    .wl-form{padding:28px}
     .promise,.corridors,.q-sec,.cta{padding:90px 0}
     .promise-grid{grid-template-columns:1fr;gap:0}
     .promise-cell{border-right:0;border-bottom:1px solid rgba(10,10,10,.1);padding:32px 0 !important}
@@ -879,37 +903,39 @@
   </div>
 </section>
 
-<!-- TALK TO US ─────────────────────────────── -->
-<section class="talk-sec" id="talk">
-  <div class="wrap talk-wrap">
-    <div class="talk-head">
-      <span class="eyebrow">We’re still listening</span>
-      <div class="talk-lead">Tell us <span class="hl">what hurts</span><span class="serif">.</span></div>
-    </div>
-
-    <div class="talk-grid">
-      <div class="talk-intro">
-        <p>StellarPay is early. We’re still talking to founders, finance leads and operators to understand exactly where cross-border payments break for real teams.</p>
-        <p>If any of this sounds familiar, or if we’ve framed it wrong, <b>come on a call.</b> No pitch, no deck. Twenty minutes so we can learn.</p>
+<!-- WAITLIST ───────────────────────────────── -->
+<section class="wl-sec" id="talk">
+  <div class="wrap wl-wrap">
+    <div class="wl-grid">
+      <div class="wl-copy">
+        <span class="eyebrow">We’re still listening</span>
+        <h2 class="wl-lead">We are in early discovery — <span class="serif">your input shapes what we build.</span></h2>
+        <p class="wl-sub">Join our waitlist, and we will reach out to hear how your business handles international payments today.</p>
       </div>
 
-      <div class="talk-list" aria-label="What we want to understand">
-        <div class="talk-item"><span class="idx">01</span><span class="q">Which corridor costs you the most sleep?</span></div>
-        <div class="talk-item"><span class="idx">02</span><span class="q">What does a “good” payment experience even look like for you?</span></div>
-        <div class="talk-item"><span class="idx">03</span><span class="q">Where do your current tools quietly fall apart?</span></div>
-        <div class="talk-item"><span class="idx">04</span><span class="q">What would actually make you switch?</span></div>
-      </div>
-    </div>
-
-    <div class="talk-foot">
-      <a class="talk-cta" href="mailto:hello@stellarpay.co">Contact us <span class="arr">→</span></a>
-      <div class="talk-meta">
-        <span><a href="mailto:hello@stellarpay.co">hello@stellarpay.co</a></span>
-        <span class="sep"></span>
-        <span>20 min call</span>
-        <span class="sep"></span>
-        <span>No NDA needed</span>
-      </div>
+      <!-- TODO: wire `action` to Formspree, Vercel Forms, or your backend.
+           Until then, the inline handler shows a thank-you state. -->
+      <form class="wl-form" novalidate
+            onsubmit="event.preventDefault();var b=this.querySelector('button');b.innerHTML='Thanks — we’ll be in touch ✓';b.disabled=true;this.querySelectorAll('input').forEach(function(i){i.disabled=true});">
+        <div class="wl-field">
+          <label for="wl-name">Full name</label>
+          <input id="wl-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="wl-field">
+          <label for="wl-company">Company name</label>
+          <input id="wl-company" name="company" type="text" autocomplete="organization" required>
+        </div>
+        <div class="wl-field">
+          <label for="wl-email">Email address</label>
+          <input id="wl-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="wl-field">
+          <label for="wl-role">Role</label>
+          <input id="wl-role" name="role" type="text" placeholder="e.g. Operations Manager" autocomplete="organization-title">
+        </div>
+        <button class="wl-submit" type="submit">Join the waitlist →</button>
+        <p class="wl-disclaimer">We’ll only use your details to reach out about StellarPay.</p>
+      </form>
     </div>
   </div>
 </section>
