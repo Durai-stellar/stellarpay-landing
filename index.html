@@ -541,16 +541,19 @@
 
   /* Rotating globe — silhouette */
   .globe{
-    position:absolute;top:50%;right:-6%;transform:translateY(-50%);
-    width:820px;height:820px;z-index:1;pointer-events:none;
+    position:absolute;top:50%;right:14%;transform:translateY(-50%);
+    width:720px;height:720px;z-index:1;pointer-events:none;
     mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
     -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
     opacity:.9;
   }
   .globe canvas{width:100%;height:100%;display:block}
-  @media (max-width:980px){.globe{display:none}}
-  /* Visually rebalance against right-side globe */
-  @media (min-width:981px){.hero .hero-inner{transform:translateX(-4vw)}}
+  @media (max-width:980px){
+    .globe{width:460px;height:460px;right:-30%;top:auto;bottom:-80px;transform:none;opacity:.45}
+  }
+  @media (max-width:600px){
+    .globe{width:380px;height:380px;right:-35%;bottom:-60px;opacity:.4}
+  }
 
   .hero-top{
     display:flex;align-items:center;gap:14px;margin-bottom:56px;color:var(--muted-dark);font-size:12.5px
@@ -655,7 +658,8 @@
   /* ─── Footer ─────────────────────────────────── */
   footer{background:var(--ink);color:var(--muted-dark);padding:64px 0 32px;border-top:1px solid rgba(255,255,255,.08)}
   .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px}
-  .foot-brand{max-width:320px;display:flex;flex-direction:column;gap:14px}
+  .foot-brand{max-width:320px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+  .foot-brand .logo-mark{margin-left:-10px}
   .foot-bio{color:var(--muted-dark);font-size:13.5px;line-height:1.55;margin:0}
   .foot-contact{display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right}
   .foot-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
@@ -846,7 +850,7 @@
           <textarea id="wl-pain" name="pain" rows="3" placeholder="Stuck wires, missing confirmations, FX surprises…"></textarea>
         </div>
         <button class="wl-submit" type="submit">Request early access →</button>
-        <p class="wl-disclaimer">We’ll reply within 2 business days. No marketing, ever.</p>
+        <p class="wl-disclaimer">Used only to follow up. Never shared, never on a list.</p>
       </form>
     </div>
   </div>
