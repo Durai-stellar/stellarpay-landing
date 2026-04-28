@@ -607,10 +607,12 @@
   h2 .serif{font-weight:400;font-style:italic;font-size:1.05em;letter-spacing:-.03em}
 
   .promise-intro{max-width:560px;color:var(--text-2);font-size:17px;line-height:1.55;margin:20px 0 0}
-  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid rgba(10,10,10,.1)}
-  .promise-cell{padding:48px 0 8px;padding-right:36px;border-right:1px solid rgba(10,10,10,.1)}
+  .promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:80px;border-top:1px solid rgba(10,10,10,.1)}
+  .promise-cell{padding:48px 0 8px;padding-right:28px;border-right:1px solid rgba(10,10,10,.1)}
   .promise-cell:last-child{border-right:0}
-  .promise-cell:not(:first-child){padding-left:36px}
+  .promise-cell:not(:first-child){padding-left:28px}
+  .promise-cell .sol{max-width:none}
+  .promise-cell .prob{max-width:none}
   .promise-cell .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.14em;margin-bottom:20px}
   .promise-cell h3{font-size:30px;font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0 0 20px;color:var(--ink)}
   .promise-cell h3 .serif{font-weight:400;font-style:italic;font-size:1.06em;letter-spacing:-.02em}
@@ -774,8 +776,8 @@
       </div>
       <div class="promise-cell">
         <div class="n">02 · PRICING</div>
-        <h3>Rates within points <span class="serif">of interbank.</span></h3>
-        <p class="sol">Live mid-market rate on screen. Spread itemised. One number, no surprises.</p>
+        <h3>Real FX rates, <span class="serif">no hidden markup.</span></h3>
+        <p class="sol">Live mid-market rate on screen. Our spread shown as a line item. The number you see is the number you pay.</p>
         <div class="prob-label">What we replace</div>
         <p class="prob">Hidden FX margins buried in the “fee” line.</p>
       </div>
@@ -785,6 +787,13 @@
         <p class="sol">See exactly where your money is, from your account to the supplier’s, in real time.</p>
         <div class="prob-label">What we replace</div>
         <p class="prob">Sending a wire and guessing for days where it is.</p>
+      </div>
+      <div class="promise-cell">
+        <div class="n">04 · COMPLIANCE</div>
+        <h3>Compliant by default, <span class="serif">audit-ready.</span></h3>
+        <p class="sol">Regulated payments operator. KYB, sanctions screening, and audit trails — included, not bolted on.</p>
+        <div class="prob-label">What we replace</div>
+        <p class="prob">Choosing between moving fast and staying compliant.</p>
       </div>
     </div>
   </div>
