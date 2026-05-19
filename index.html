@@ -504,6 +504,8 @@
   .nav-links{display:flex;gap:28px;margin-left:12px}
   .nav-links a{font-size:13.5px;color:var(--muted-light);font-weight:500;transition:color .15s}
   .nav-links a:hover{color:#fff}
+  .nav-links a.is-soon{display:inline-flex;align-items:center;gap:7px;color:var(--muted);cursor:default;pointer-events:none}
+  .soon-badge{display:inline-block;padding:2px 7px;font-size:9.5px;font-weight:600;line-height:1;border-radius:999px;background:rgba(232,255,58,.12);color:var(--accent);border:1px solid rgba(232,255,58,.35);letter-spacing:.06em;text-transform:uppercase}
   .nav-spacer{flex:1}
   .nav-cta{display:flex;align-items:center;gap:8px}
   .btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:999px;font-size:13.5px;font-weight:600;letter-spacing:-.005em;transition:all .18s ease;white-space:nowrap}
@@ -704,8 +706,7 @@
     <div class="nav-links">
       <a href="#audience">Who it’s for</a>
       <a href="#platform">Platform</a>
-      <a href="#">Docs</a>
-      <a href="#">Pricing</a>
+      <a href="#" class="is-soon" aria-disabled="true">Docs <span class="soon-badge">Soon</span></a>
     </div>
     <div class="nav-spacer"></div>
     <div class="nav-cta">
