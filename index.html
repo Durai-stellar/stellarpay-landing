@@ -822,10 +822,38 @@
         </ul>
       </div>
 
-      <!-- TODO: wire `action` to Formspree, Vercel Forms, or your backend.
-           Until then, the inline handler shows a thank-you state. -->
-      <form class="wl-form" novalidate
-            onsubmit="event.preventDefault();var b=this.querySelector('button');b.innerHTML='Thanks — we’ll be in touch ✓';b.disabled=true;this.querySelectorAll('input,textarea').forEach(function(i){i.disabled=true});">
+      <!-- Wired to Web3Forms. Replace YOUR_ACCESS_KEY_HERE with your key from web3forms.com -->
+      <form class="wl-form" action="https://api.web3forms.com/submit" method="POST" novalidate
+            onsubmit="
+              event.preventDefault();
+              var form = this;
+              var btn = form.querySelector('button');
+              var originalText = btn.innerHTML;
+              btn.innerHTML = 'Sending…';
+              btn.disabled = true;
+              fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {'Accept':'application/json'},
+                body: new FormData(form)
+              }).then(function(r){return r.json()}).then(function(data){
+                if (data.success) {
+                  btn.innerHTML = 'Thanks — we’ll be in touch ✓';
+                  form.querySelectorAll('input,textarea').forEach(function(i){i.disabled=true});
+                } else {
+                  btn.innerHTML = originalText;
+                  btn.disabled = false;
+                  alert('Something went wrong. Please email hello@flowwpay.com instead.');
+                }
+              }).catch(function(){
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Network error. Please try again or email hello@flowwpay.com.');
+              });
+            ">
+        <input type="hidden" name="access_key" value="aaa3a8b1-4a76-4478-9ead-e977ec932c02">
+        <input type="hidden" name="subject" value="New FlowwPay waitlist signup">
+        <input type="hidden" name="from_name" value="FlowwPay Waitlist">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="wl-row">
           <div class="wl-field">
             <label for="wl-name">Full name</label>
